@@ -1,8 +1,8 @@
 .PHONY: clean all re fclean
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
-NAME = megaphone
-SRC = megaphone.cpp
+NAME = contacts
+SRC = contacts.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

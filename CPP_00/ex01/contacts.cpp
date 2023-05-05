@@ -118,10 +118,7 @@ int main()
 				book.print_contact();
 			}
 			else if (command == "EXIT")
-			{
-				std::cout << "\e[1;31mfinished"<< std::endl;
 				return (0);
-			}
 			else
 				std::cout << "The command is INVALID"<< std::endl;
 		}
