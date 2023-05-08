@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Weapon.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 14:27:52 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 10:24:36 by yajallal         ###   ########.fr       */
+/*   Created: 2023/05/08 10:28:39 by yajallal          #+#    #+#             */
+/*   Updated: 2023/05/08 12:38:45 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef WEAPON_H
+#define WEAPON_H
 
-#include "Zombie.hpp"
-
-Zombie* zombieHorde( int N, std::string name );
-
+#include "Weapon.hpp"
 #endif

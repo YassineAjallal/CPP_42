@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 19:19:36 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/05 19:24:33 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:23:22 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "contacts.h"
 
 class Contact {
+
 public : 
 	std::string first_name;
 	std::string last_name;
@@ -48,7 +49,7 @@ public :
 
 class PhoneBook {
 public :
-	Contact contacts[3];
+	Contact contacts[8];
 	int nb_contact;
 	int old_contact;
 	void print_contact()
@@ -70,7 +71,7 @@ public :
 		}
 		std::cout << "\e[0;36msearch :\e[0;00m ";
 		std::cin >> search;
-		if (search > this->nb_contact || search < 0)
+		if (search >= this->nb_contact || search < 0)
 			std::cout << "contact not found" << std::endl;
 		else
 			this->contacts[search].print_info();

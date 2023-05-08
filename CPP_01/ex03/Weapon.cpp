@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 14:27:52 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 10:24:36 by yajallal         ###   ########.fr       */
+/*   Created: 2023/05/08 12:36:59 by yajallal          #+#    #+#             */
+/*   Updated: 2023/05/08 16:03:01 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#include "Weapon.h"
 
-#include "Zombie.hpp"
-
-Zombie* zombieHorde( int N, std::string name );
-
-#endif
+Weapon::Weapon(std::string type)
+{
+	Weapon::_type = type;
+}
+Weapon::Weapon()
+{
+}
+const std::string&  Weapon::getType()
+{
+	const std::string& type = Weapon::_type;
+	return (type);
+}
+void  Weapon::setType(std::string new_value)
+{
+	std::cout << "----->" << Weapon::_type << std::endl;
+	Weapon::_type = new_value;
+	std::cout << "----->" << Weapon::_type << std::endl;
+}

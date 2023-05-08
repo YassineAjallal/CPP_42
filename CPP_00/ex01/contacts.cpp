@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 19:21:41 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/05 19:21:44 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:26:43 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int main()
 			std::cin >> command;
 			if (command == "ADD")
 			{
-				if (book.nb_contact > 2)
+				if (book.nb_contact > 7)
 				{
 					book.contacts[book.old_contact].fill_info();
 					book.old_contact++;
-					if (book.old_contact > 2)
+					if (book.old_contact > 7)
 						book.old_contact = 0;
 				}
 				else
@@ -70,7 +70,7 @@ int main()
 			else if (command == "EXIT")
 				return (0);
 			else
-				std::cout << "The command is INVALID"<< std::endl;
+				std::cout << "command INVALID"<< std::endl;
 		}
 
 	return 0;

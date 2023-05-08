@@ -6,9 +6,12 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:16:52 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/07 14:11:15 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:23:07 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+#define	ZOMBIE_HPP
 
 #include <iostream>
 
@@ -24,3 +27,5 @@ private:
 
 	std::string _name;
 };
+
+#endif

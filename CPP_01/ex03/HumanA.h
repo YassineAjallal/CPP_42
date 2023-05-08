@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   HumanA.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 14:27:52 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 10:24:36 by yajallal         ###   ########.fr       */
+/*   Created: 2023/05/08 10:26:24 by yajallal          #+#    #+#             */
+/*   Updated: 2023/05/08 11:21:26 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef HUMANA_H
+#define HUMANA_H
 
-#include "Zombie.hpp"
-
-Zombie* zombieHorde( int N, std::string name );
+#include "HumanA.hpp"
 
 #endif

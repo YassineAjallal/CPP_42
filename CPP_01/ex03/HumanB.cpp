@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 14:27:52 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 10:24:36 by yajallal         ###   ########.fr       */
+/*   Created: 2023/05/08 15:31:27 by yajallal          #+#    #+#             */
+/*   Updated: 2023/05/08 15:43:07 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#include "HumanB.h"
 
-#include "Zombie.hpp"
+HumanB::HumanB(std::string name)
+{
+	HumanB::name = name;
+}
 
-Zombie* zombieHorde( int N, std::string name );
+void HumanB::attack()
+{
+	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+}
 
-#endif
+void HumanB::setWeapon(Weapon weapon)
+{
+	HumanB::weapon = weapon;
+}
