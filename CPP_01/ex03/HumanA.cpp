@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:20:44 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 15:43:23 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/06/10 20:49:37 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 HumanA::HumanA(std::string name, Weapon& weapon)
 {
 	HumanA::name = name;
-	HumanA::weapon = weapon;
+	HumanA::weapon = &weapon;
 }
 
 void HumanA::attack()
-{
-	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
+{	
+	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
 }
 
