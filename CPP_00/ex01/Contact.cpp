@@ -6,34 +6,11 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 19:21:41 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/10 12:13:56 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/10 16:06:18 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-void aligned(std::string str)
-{
-	int i;
-	int length;
-
-	i = 0;
-	length = str.length();
-	if (length < 10)
-	{
-		while (i < 10 - length)
-		{
-			std::cout << " ";
-			i++;
-		}
-		std::cout << str;
-	}
-	else if (length > 10)
-		std::cout << str.substr(0, 9) << ".";
-	else
-		std::cout << str;
-
-}
 
 void Contact::fill_info()
 {

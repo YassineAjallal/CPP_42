@@ -6,11 +6,50 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 10:13:15 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/10 12:16:50 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/10 16:18:05 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+int all_digit(std::string str)
+{
+	int i;
+	i = 0;
+
+	if (str.empty())
+		return (0);
+	while (i < str.length())
+	{
+		if (!std::isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);	
+}
+
+void aligned(std::string str)
+{
+	int i;
+	int length;
+
+	i = 0;
+	length = str.length();
+	if (length < 10)
+	{
+		while (i < 10 - length)
+		{
+			std::cout << " ";
+			i++;
+		}
+		std::cout << str;
+	}
+	else if (length > 10)
+		std::cout << str.substr(0, 9) << ".";
+	else
+		std::cout << str;
+
+}
 
 int main()
 {

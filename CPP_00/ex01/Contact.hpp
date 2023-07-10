@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 19:19:36 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/10 12:12:20 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/10 16:06:31 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <string>
 #include <iomanip>
 
-void aligned(std::string str);
 class Contact {
 
 public : 
