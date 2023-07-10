@@ -6,12 +6,11 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 09:14:44 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/10 12:39:39 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:36:59 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
-#include <iostream>
 
 int	Account::getNbAccounts( void )
 {
@@ -118,6 +117,7 @@ void	Account::displayStatus( void ) const
 	std::cout << "deposits:" << Account::_nbDeposits << ";";
 	std::cout << "withdrawals:" << Account::_nbWithdrawals << std::endl;
 }
+
 void	Account::_displayTimestamp( void )
 {
 	std::time_t currentTime = std::time(nullptr);
@@ -126,11 +126,21 @@ void	Account::_displayTimestamp( void )
     int year = currentDate->tm_year + 1900; 
     int month = currentDate->tm_mon + 1;
     int day = currentDate->tm_mday;
+	int hour = currentDate->tm_hour;
+	int min =  currentDate->tm_min;
+	int sec = currentDate->tm_sec;
 
-    std::cout << "[" << year;
+    std::cout << "[";
+	// print date;
+	std::cout << year;
 	month < 10 ? std::cout << "0" << month : std::cout << month;
 	day < 10 ? std::cout << "0" << day : std::cout << day;
-	std::cout << "_" << currentTime << "] ";
+	std::cout << "_";
+	// print time
+	hour < 10 ? std::cout << "0" << hour : std::cout  << hour;
+	min < 10 ? std::cout << "0" << min : std::cout  << min;
+	sec < 10 ? std::cout << "0" << sec : std::cout  << sec;
+	std::cout <<  "] ";
 }
 
 int Account::_nbAccounts = 0;
