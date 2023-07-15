@@ -1,14 +1,17 @@
 .PHONY: clean all re fclean
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = contacts
 SRC = Contact.cpp main.cpp PhoneBook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME): $(OBJ)
-	@$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 
 clean:

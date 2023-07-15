@@ -6,15 +6,16 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:31:27 by yajallal          #+#    #+#             */
-/*   Updated: 2023/06/10 20:48:06 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:13:55 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.h"
+#include "HumanB.hpp"
 
 HumanB::HumanB(std::string name)
 {
-	HumanB::name = name;
+	this->name = name;
+	this->weapon = NULL;
 }
 
 void HumanB::attack()
@@ -24,5 +25,5 @@ void HumanB::attack()
 
 void HumanB::setWeapon(Weapon& weapon)
 {
-	HumanB::weapon = &weapon;
+	this->weapon = &weapon;
 }

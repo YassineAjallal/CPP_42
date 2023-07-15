@@ -1,17 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.h                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 10:28:39 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 12:38:45 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/14 19:56:31 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/14 19:57:50 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include "Weapon.hpp"
+#include <iostream>
+
+class Harl {
+	
+private :
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
+
+public :
+	void complain(std::string level);
+	void harlFilter(std::string level);
+};
+
 #endif

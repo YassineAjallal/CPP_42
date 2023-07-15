@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:19:56 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 15:28:01 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:10:11 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Weapon {
 
 private:
 	std::string _type;
-
 public:
 	Weapon();
 	Weapon(std::string type);

@@ -6,21 +6,21 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:23:19 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/07 18:07:18 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:35:28 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 Zombie::Zombie(std::string name)
 {
-	Zombie::_name = name;
+	_name = name;
 }
 Zombie::~Zombie()
 {
-	std::cout << Zombie::_name << " destroyed" << std::endl; 
+	std::cout << _name << " destroyed" << std::endl;
 }
 void Zombie::announce (void)
 {
-	std::cout << Zombie::_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

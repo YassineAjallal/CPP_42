@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 19:19:36 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/10 16:06:31 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/10 18:04:19 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 
 #include <iostream>
 #include <string>
-#include <iomanip>
 
 class Contact {
 
+private:
+	std::string	darkest_secret;
+	std::string	phone_number;
 public : 
 	std::string first_name;
 	std::string last_name;
 	std::string	nickname;
-	std::string	darkest_secret;
-	std::string	phone_number;
 
 	void fill_info();
 	int empty_field();
 	void print_info();
 };
+
 #endif

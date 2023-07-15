@@ -1,8 +1,8 @@
 .PHONY: clean all re fclean
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = weapon
-SRC = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+NAME = harlFilter
+SRC = Harl.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp

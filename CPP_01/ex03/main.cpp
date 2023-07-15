@@ -6,12 +6,12 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:33:00 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/08 12:33:37 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/14 16:10:15 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.h"
-#include "HumanB.h"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {

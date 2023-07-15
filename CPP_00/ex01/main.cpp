@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 10:13:15 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/10 16:18:05 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/10 16:54:25 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int all_digit(std::string str)
 {
-	int i;
+	unsigned long i;
 	i = 0;
 
 	if (str.empty())

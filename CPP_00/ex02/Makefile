@@ -1,15 +1,17 @@
 .PHONY: clean all re fclean
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = account
 SRC = Account.cpp tests.cpp
 OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME)
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	@$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
+all: $(NAME)
 
 clean:
 	@rm -f $(OBJ)

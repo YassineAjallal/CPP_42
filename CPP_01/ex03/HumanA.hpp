@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:27:08 by yajallal          #+#    #+#             */
-/*   Updated: 2023/06/10 20:49:29 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/15 12:09:49 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 class HumanA {
 
-public:
-	
+private:
 	Weapon* weapon;
 	std::string name;
 
+public:
 	HumanA(std::string name, Weapon& weapon);
 	void attack();
 
