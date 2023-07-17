@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 14:28:39 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/14 16:04:48 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:03:19 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Zombie* zombieHorde( int N, std::string name )
 	while(i < N)
 	{
 		zombies[i].setName(name);
-		zombies[i].announce();
 		i++;
 	}
 	return (zombies);

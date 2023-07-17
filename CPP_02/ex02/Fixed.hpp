@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:41:45 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/17 20:23:11 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/17 22:17:33 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,28 @@ class Fixed
 		int toInt( void ) const;
 		~Fixed();
 		Fixed& operator=( const Fixed& copy );
+		bool operator>( const Fixed& other_side);
+		bool operator<( const Fixed& other_side);
+		bool operator>=( const Fixed& other_side);
+		bool operator<=( const Fixed& other_side);
+		bool operator==( const Fixed& other_side);
+		bool operator!=( const Fixed& other_side);
+
+		Fixed operator+( const Fixed& other_side);
+		Fixed operator-( const Fixed& other_side);
+		Fixed operator*( const Fixed& other_side);
+		Fixed operator/( const Fixed& other_side);
+	
+		Fixed& operator--();
+		Fixed& operator++();
+		Fixed operator--(int);
+		Fixed operator++(int);
+
+		static Fixed& min( Fixed& fixed_one, Fixed& fixed_two );
+		static Fixed& max( Fixed& fixed_one, Fixed& fixed_two );
+
+		static const Fixed& min( const Fixed& fixed_one, const Fixed& fixed_two );
+		static const Fixed& max( const Fixed& fixed_one, const Fixed& fixed_two );
 };
 
 std::ostream& operator<<( std::ostream& os, const Fixed& fixed );

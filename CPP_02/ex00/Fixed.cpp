@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:56:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/15 20:32:21 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/17 14:25:36 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(void)
 Fixed::Fixed( const Fixed& copy )
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_fixedPoint = copy.getRawBits();
+	*this = copy;
 }
 
 Fixed::~Fixed(void)

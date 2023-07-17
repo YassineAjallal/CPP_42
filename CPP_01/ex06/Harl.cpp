@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:50:05 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/15 11:33:36 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:24:16 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,21 +59,20 @@ void Harl::harlFilter(std::string level)
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int i;
 
-	i = -1;
-	while (++i < 4)
-		if (level == levels[i])
-			break;
+	i = 0;
+	while (level != levels[i] && i < 4)
+		i++;
 
 	switch(i)
 	{
 		case 0 ... 3: 
 			while(i < 4) 
 			{
-				this->complain(levels[i]); i++;
+				this->complain(levels[i]); 
+				i++;
 			}
 			break;
 		default :
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;		
 	}
 }

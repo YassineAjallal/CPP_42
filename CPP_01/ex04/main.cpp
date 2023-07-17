@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 21:11:39 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/15 16:14:02 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:14:50 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int main(int ac, char **av)
 			replace_file.open(freplace_name, std::ios::out);
 			if(!replace_file.is_open())
 			{
-				std::cout << "Error : cannot open repalce file" << std::endl;
+				file.close();
+				std::cout << "Error : cannot open replace file" << std::endl;
 				return (0);
 			}
 			while (getline(file, file_content))

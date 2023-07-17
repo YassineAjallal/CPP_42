@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 18:15:44 by yajallal          #+#    #+#             */
-/*   Updated: 2023/05/07 18:29:06 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/17 10:06:24 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main()
 	std::cout << "stringPTR address : " << stringPTR <<std::endl;
 	std::cout << "stringREF address : " << &stringREF <<std::endl;
 
-	std::cout << "string value      : " << str <<std::endl;
 	std::cout << "stringPTR value   : " << *stringPTR <<std::endl;
 	std::cout << "stringREF value   : " << stringREF <<std::endl;
 }
