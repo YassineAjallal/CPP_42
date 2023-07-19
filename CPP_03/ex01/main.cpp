@@ -6,19 +6,19 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:38:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 17:15:55 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/19 11:51:21 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap player1;
-	ClapTrap player2("yassine");
-	ClapTrap player3(player2);
-	
-	player1 = player2;
-	player1.attack("ajallal");
-	player3.attack("imad");
+	ClapTrap p1;
+	ScavTrap p2;
+	std::cout << "-----------------------" << std::endl;
+	p1.attack("h");
+	p2.attack("h");
+	p2.guardGate();
+	std::cout << "-----------------------" << std::endl;
 }

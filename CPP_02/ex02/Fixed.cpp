@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:56:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/17 22:34:00 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/18 13:37:45 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed::~Fixed(void)
 
 int Fixed::getRawBits( void ) const
 {
-	return (this->toFloat());
+	return (_fixedPoint);
 }
 
 void Fixed::setRawBits( int const raw )
@@ -74,63 +74,56 @@ std::ostream& operator<<( std::ostream& os, const Fixed& fixed )
 
 bool Fixed::operator>( const Fixed& other_side)
 {
-	return (_fixedPoint > other_side.getRawBits());
+	return (_fixedPoint > other_side._fixedPoint);
 }
 
 bool Fixed::operator<( const Fixed& other_side)
 {
-	return (_fixedPoint < other_side.getRawBits());
+	return (_fixedPoint < other_side._fixedPoint);
 }
 
 bool Fixed::operator>=( const Fixed& other_side)
 {
-	return (_fixedPoint >= other_side.getRawBits());
+	return (_fixedPoint >= other_side._fixedPoint);
 }
 
 bool Fixed::operator<=( const Fixed& other_side)
 {
-	return (_fixedPoint <= other_side.getRawBits());
+	return (_fixedPoint <= other_side._fixedPoint);
 }
 
 bool Fixed::operator==( const Fixed& other_side)
 {
-	return (_fixedPoint == other_side.getRawBits());
+	return (_fixedPoint == other_side._fixedPoint);
 }
 
 bool Fixed::operator!=( const Fixed& other_side)
 {
-	return (_fixedPoint != other_side.getRawBits());
+	return (_fixedPoint != other_side._fixedPoint);
 }
 
 Fixed Fixed::operator+(const Fixed& other_side)
 {
-	Fixed add_op;
+	Fixed add_op(toFloat() + other_side.toFloat());
 
-	add_op.setRawBits( _fixedPoint + other_side.getRawBits() );
 	return (add_op);
 }
 
 Fixed Fixed::operator-(const Fixed& other_side)
 {
-	Fixed sub_op;
-
-	sub_op.setRawBits( _fixedPoint - other_side.getRawBits() );
+	Fixed sub_op(toFloat() - other_side.toFloat());
 	return (sub_op);
 }
 
 Fixed Fixed::operator*(const Fixed& other_side)
 {
-	Fixed mult_op;
-
-	mult_op.setRawBits( _fixedPoint * other_side.getRawBits() );
+	Fixed mult_op(toFloat() * other_side.toFloat());
 	return (mult_op);
 }
 
 Fixed Fixed::operator/(const Fixed& other_side)
 {
-	Fixed div_op;
-
-	div_op.setRawBits( _fixedPoint / other_side.getRawBits() );
+	Fixed div_op(toFloat() / other_side.toFloat());
 	return (div_op);
 }
 
@@ -162,22 +155,22 @@ Fixed Fixed::operator++(int)
 
 Fixed& Fixed::min( Fixed& fixed_one, Fixed& fixed_two )
 {
-	return (fixed_one.getRawBits() < fixed_two.getRawBits() ? fixed_one : fixed_two);
+	return (fixed_one._fixedPoint < fixed_two._fixedPoint ? fixed_one : fixed_two);
 }
 
 Fixed& Fixed::max( Fixed& fixed_one, Fixed& fixed_two )
 {
-	return (fixed_one.getRawBits() > fixed_two.getRawBits() ? fixed_one : fixed_two);
+	return (fixed_one._fixedPoint > fixed_two._fixedPoint ? fixed_one : fixed_two);
 }
 
 const Fixed& Fixed::min( const Fixed& fixed_one, const Fixed& fixed_two )
 {
-	return (fixed_one.getRawBits() < fixed_two.getRawBits() ? fixed_one : fixed_two);
+	return (fixed_one._fixedPoint < fixed_two._fixedPoint ? fixed_one : fixed_two);
 }
 
 const Fixed& Fixed::max( const Fixed& fixed_one, const Fixed& fixed_two )
 {
-	return (fixed_one.getRawBits() > fixed_two.getRawBits() ? fixed_one : fixed_two);
+	return (fixed_one._fixedPoint > fixed_two._fixedPoint ? fixed_one : fixed_two);
 }
 
 const int Fixed::_nbBits = 8;

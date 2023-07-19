@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 16:38:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 17:15:55 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/18 17:17:57 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/19 15:18:46 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
+class FragTrap : virtual public ClapTrap
 {
-	ClapTrap player1;
-	ClapTrap player2("yassine");
-	ClapTrap player3(player2);
-	
-	player1 = player2;
-	player1.attack("ajallal");
-	player3.attack("imad");
-}
+
+public:
+	FragTrap();
+	FragTrap(FragTrap& copy);
+	FragTrap(std::string name);
+	void highFivesGuys(void);
+	FragTrap& operator=(FragTrap& copy);
+	~FragTrap();
+};
+
+#endif

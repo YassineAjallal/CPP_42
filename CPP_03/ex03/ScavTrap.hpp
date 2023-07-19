@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 16:38:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 17:15:55 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/18 17:17:57 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/19 15:50:36 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : virtual public ClapTrap
 {
-	ClapTrap player1;
-	ClapTrap player2("yassine");
-	ClapTrap player3(player2);
-	
-	player1 = player2;
-	player1.attack("ajallal");
-	player3.attack("imad");
-}
+
+public:
+	ScavTrap();
+	ScavTrap(ScavTrap& copy);
+	ScavTrap(std::string name);
+	void guardGate();
+	ScavTrap& operator=(ScavTrap& copy);
+	void attack(const std::string& target);
+	~ScavTrap();
+};
+
+#endif

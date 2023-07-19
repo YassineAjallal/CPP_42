@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 10:37:36 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 11:20:10 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/18 18:30:17 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <string>
 class ClapTrap
 {
-private:
+
+protected:
 	std::string _name;
 	unsigned int _hit_points;
 	unsigned int _energy_points;

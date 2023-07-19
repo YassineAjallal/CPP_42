@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 16:38:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 17:15:55 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/19 12:30:49 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/19 15:50:04 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	ClapTrap player1;
-	ClapTrap player2("yassine");
-	ClapTrap player3(player2);
-	
-	player1 = player2;
-	player1.attack("ajallal");
-	player3.attack("imad");
-}
+private:
+	std::string _name;
+public:
+	DiamondTrap();
+	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap &copy);
+	DiamondTrap& operator=(DiamondTrap& copy);
+	void attack(const std::string& target);
+	void whoAmI();
+	~DiamondTrap();
+};
+
+#endif
