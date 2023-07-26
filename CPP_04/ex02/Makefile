@@ -2,7 +2,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = abstract
-SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp

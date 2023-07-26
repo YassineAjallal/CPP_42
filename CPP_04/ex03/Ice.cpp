@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 10:09:48 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/26 09:56:56 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/21 15:49:31 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/25 18:31:17 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Ice.hpp"
 
-Brain::Brain()
+Ice::Ice()
 {
-	std::cout << "Brain : Default constructor called" << std::endl;
-	for (int i = 0; i < 100; i++)
-		ideas[i] = "idea";
+	_type = "ice";
 }
 
-Brain::Brain(Brain& copy)
+Ice::Ice(const Ice &copy)
 {
-	std::cout << "Brain : Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Brain& Brain::operator=(const Brain& copy)
+Ice &Ice::operator=(const Ice &copy)
 {
 	if (this != &copy)
-		for (int i = 0; i < 100; i++)
-			ideas[i] = copy.ideas[i];
+		this->_type = copy.getType();
 	return (*this);
 }
 
-
-Brain::~Brain()
+void  Ice::use(ICharacter& target)
 {
-	std::cout << "Brain : Default Destructor called" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
+
+AMateria* Ice::clone() const
+{
+	AMateria *clone_ice = new Ice();
+	return (clone_ice);
+}
+
+Ice::~Ice(){}

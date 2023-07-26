@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:38:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/19 11:51:21 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/23 16:40:44 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main()
 {
-	ClapTrap p1;
-	ScavTrap p2;
+	// ClapTrap p1;
+	ScavTrap p2("yassine");
 	std::cout << "-----------------------" << std::endl;
-	p1.attack("h");
-	p2.attack("h");
+	// p1.attack("imad");
+	p2.attack("imad");
 	p2.guardGate();
 	std::cout << "-----------------------" << std::endl;
 }

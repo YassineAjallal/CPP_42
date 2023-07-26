@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:41:45 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/15 18:42:48 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/22 11:09:30 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Fixed
 		Fixed& operator=( const Fixed& copy);
 
 	private:
-		int _fixedPoint;
+		int _rawBits;
 		static const int _nbBits;
 };
 

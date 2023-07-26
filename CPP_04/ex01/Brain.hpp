@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 10:01:31 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/21 10:11:54 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/26 09:32:04 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+
 class Brain
 {
 private:

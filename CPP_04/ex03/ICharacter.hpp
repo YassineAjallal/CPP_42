@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/18 16:38:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/23 17:22:13 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/21 15:35:25 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/25 16:34:05 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef IChARACTER_HPP
+#define IChARACTER_HPP
 
-int main()
+#include <string>
+
+class AMateria;
+
+class ICharacter
 {
-	ClapTrap p1;
-	std::cout << "---" << std::endl;
-	ScavTrap p2;
-	std::cout << "---" << std::endl;
-	FragTrap p3;
-	std::cout << "-----------------------" << std::endl;
-	p1.attack("h");
-	p2.attack("h");
-	p3.attack("h");
-	p2.guardGate();
-	p3.highFivesGuys();
-	std::cout << "-----------------------" << std::endl;
-}
+	public:
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
+#endif

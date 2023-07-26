@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:41:45 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 12:42:32 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/22 13:28:59 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 class Fixed
 {
 	private:
-		int _fixedPoint;
+		int _rawBits;
 		static const int _nbBits;
 	public:
 		Fixed(void);
 		Fixed( const Fixed& copy );
 		Fixed(const int n);
-		Fixed(const double float_point);
+		Fixed(const float float_point);
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 		float toFloat( void ) const;

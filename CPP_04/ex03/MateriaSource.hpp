@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 12:30:49 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/23 18:58:36 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/25 15:14:11 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/25 16:04:20 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "IMateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class MateriaSource : public IMateriaSource
 {
 	private:
-		std::string _name;
+		AMateria *_materias[4];
+		int _nb_materias;
 	public:
-		DiamondTrap();
-		DiamondTrap(std::string name);
-		DiamondTrap(DiamondTrap &copy);
-		DiamondTrap& operator=(DiamondTrap& copy);
-		void attack(const std::string& target);
-		void whoAmI();
-		~DiamondTrap();
+		MateriaSource();
+		MateriaSource(const MateriaSource& copy);
+		MateriaSource& operator=(const MateriaSource& copy);
+		void learnMateria(AMateria* m);
+		AMateria* createMateria(std::string const & type);
+		~MateriaSource();
 };
 
 #endif

@@ -1,8 +1,8 @@
 .PHONY: clean all re fclean
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = brain
-SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp
+NAME = materia
+SRC = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp  main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp

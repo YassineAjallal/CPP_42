@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 18:20:14 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/20 18:22:54 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/26 09:26:01 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,4 @@ WrongAnimal::~WrongAnimal()
 std::string WrongAnimal::getType() const
 {
 	return (_type);
-}
-void WrongAnimal::setType(std::string type)
-{
-	_type = type;
 }

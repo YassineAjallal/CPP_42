@@ -6,24 +6,26 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 17:56:33 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 13:37:45 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/22 13:29:06 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+const int Fixed::_nbBits = 8;
+
 Fixed::Fixed(void)
 {
-	this->_fixedPoint = 0;
+	this->_rawBits = 0;
 }
 Fixed::Fixed(const int n)
 {
-	_fixedPoint = (n << _nbBits);
+	this->_rawBits = (n << _nbBits);
 }
 
-Fixed::Fixed(const double float_point)
+Fixed::Fixed(const float float_point)
 {
-	_fixedPoint = std::roundf(float_point * (1 << _nbBits));
+	this->_rawBits = std::roundf(float_point * (1 << _nbBits));
 }
 Fixed::Fixed( const Fixed& copy )
 {
@@ -37,32 +39,32 @@ Fixed::~Fixed(void)
 
 int Fixed::getRawBits( void ) const
 {
-	return (_fixedPoint);
+	return (this->_rawBits);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-	this->_fixedPoint = raw;
+	this->_rawBits = raw;
 }
 
 
 float Fixed::toFloat( void ) const
 {
 	float to_float;
-	to_float = (float)_fixedPoint / (1 << _nbBits);
+	to_float = (float)this->_rawBits / (1 << _nbBits);
 	return (to_float);
 }
 int Fixed::toInt( void ) const
 {
 	int to_int;
-	to_int = (_fixedPoint >> _nbBits);
+	to_int = (this->_rawBits >> _nbBits);
 	return (to_int);
 }
 
 Fixed& Fixed::operator=( const Fixed& copy)
 {
 	if (this != &copy)
-		_fixedPoint = copy.getRawBits();
+		this->_rawBits = copy.getRawBits();
 	return (*this);
 }
 
@@ -74,103 +76,100 @@ std::ostream& operator<<( std::ostream& os, const Fixed& fixed )
 
 bool Fixed::operator>( const Fixed& other_side)
 {
-	return (_fixedPoint > other_side._fixedPoint);
+	return (this->_rawBits > other_side.getRawBits());
 }
 
 bool Fixed::operator<( const Fixed& other_side)
 {
-	return (_fixedPoint < other_side._fixedPoint);
+	return (this->_rawBits < other_side.getRawBits());
 }
 
 bool Fixed::operator>=( const Fixed& other_side)
 {
-	return (_fixedPoint >= other_side._fixedPoint);
+	return (this->_rawBits >= other_side.getRawBits());
 }
 
 bool Fixed::operator<=( const Fixed& other_side)
 {
-	return (_fixedPoint <= other_side._fixedPoint);
+	return (this->_rawBits <= other_side.getRawBits());
 }
 
 bool Fixed::operator==( const Fixed& other_side)
 {
-	return (_fixedPoint == other_side._fixedPoint);
+	return (this->_rawBits == other_side.getRawBits());
 }
 
 bool Fixed::operator!=( const Fixed& other_side)
 {
-	return (_fixedPoint != other_side._fixedPoint);
+	return (this->_rawBits != other_side.getRawBits());
 }
 
 Fixed Fixed::operator+(const Fixed& other_side)
 {
-	Fixed add_op(toFloat() + other_side.toFloat());
-
+	Fixed add_op(this->toFloat() + other_side.toFloat());
 	return (add_op);
 }
 
 Fixed Fixed::operator-(const Fixed& other_side)
 {
-	Fixed sub_op(toFloat() - other_side.toFloat());
+	Fixed sub_op(this->toFloat() - other_side.toFloat());
 	return (sub_op);
 }
 
 Fixed Fixed::operator*(const Fixed& other_side)
 {
-	Fixed mult_op(toFloat() * other_side.toFloat());
+	Fixed mult_op(this->toFloat() * other_side.toFloat());
 	return (mult_op);
 }
 
 Fixed Fixed::operator/(const Fixed& other_side)
 {
-	Fixed div_op(toFloat() / other_side.toFloat());
+	Fixed div_op(this->toFloat() / other_side.toFloat());
 	return (div_op);
 }
 
 Fixed& Fixed::operator--()
 {
-	--_fixedPoint;
+	--this->_rawBits;
 	return (*this);
 }
 
 Fixed& Fixed::operator++()
 {
-	++_fixedPoint;
+	++this->_rawBits;
 	return (*this);
 }
 
 Fixed Fixed::operator--(int)
 {
 	Fixed tmp(*this);
-	--_fixedPoint;
+	--this->_rawBits;
 	return (tmp);
 }
 
 Fixed Fixed::operator++(int)
 {
 	Fixed tmp(*this);
-	++_fixedPoint;
+	++this->_rawBits;
 	return (tmp);
 }
 
 Fixed& Fixed::min( Fixed& fixed_one, Fixed& fixed_two )
 {
-	return (fixed_one._fixedPoint < fixed_two._fixedPoint ? fixed_one : fixed_two);
+	return (fixed_one < fixed_two ? fixed_one : fixed_two);
 }
 
 Fixed& Fixed::max( Fixed& fixed_one, Fixed& fixed_two )
 {
-	return (fixed_one._fixedPoint > fixed_two._fixedPoint ? fixed_one : fixed_two);
+	return (fixed_one > fixed_two ? fixed_one : fixed_two);
 }
 
 const Fixed& Fixed::min( const Fixed& fixed_one, const Fixed& fixed_two )
 {
-	return (fixed_one._fixedPoint < fixed_two._fixedPoint ? fixed_one : fixed_two);
+	return (fixed_one.getRawBits() < fixed_two.getRawBits() ? fixed_one : fixed_two);
 }
 
 const Fixed& Fixed::max( const Fixed& fixed_one, const Fixed& fixed_two )
 {
-	return (fixed_one._fixedPoint > fixed_two._fixedPoint ? fixed_one : fixed_two);
+	return (fixed_one.getRawBits() > fixed_two.getRawBits() ? fixed_one : fixed_two);
 }
-
-const int Fixed::_nbBits = 8;

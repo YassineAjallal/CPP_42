@@ -1,6 +1,6 @@
 .PHONY: clean all re fclean
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 NAME = diamondTrap
 SRC = ClapTrap.cpp main.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)

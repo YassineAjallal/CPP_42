@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 10:37:36 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/18 11:20:10 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/23 16:11:16 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,24 @@
 
 #include <iostream>
 #include <string>
+
 class ClapTrap
 {
-private:
-	std::string _name;
-	unsigned int _hit_points;
-	unsigned int _energy_points;
-	unsigned int _attack_damage;
-	
-public:
-	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap& copy);
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	ClapTrap& operator=(ClapTrap& copy);
-	~ClapTrap();
+	private:
+		std::string _name;
+		unsigned int _hit_points;
+		unsigned int _energy_points;
+		unsigned int _attack_damage;
+		
+	public:
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(ClapTrap& copy);
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		ClapTrap& operator=(ClapTrap& copy);
+		~ClapTrap();
 };
 
 #endif

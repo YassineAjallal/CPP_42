@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:17:57 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/19 11:45:36 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/23 16:46:31 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	ScavTrap(ScavTrap& copy);
 	ScavTrap(std::string name);
 	void guardGate();
+	void attack(const std::string& target);
 	ScavTrap& operator=(ScavTrap& copy);
 	~ScavTrap();
 };

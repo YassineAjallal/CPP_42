@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 18:20:59 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/20 18:23:17 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/21 15:48:48 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/24 17:16:26 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include <string>
-#include <iostream>
-class WrongAnimal {
+#include "AMateria.hpp"
 
-protected:
-	std::string _type;
-public:
-	WrongAnimal();
-	WrongAnimal(WrongAnimal& copy);
-	WrongAnimal& operator=(const WrongAnimal& copy);
-	void setType(std::string type);
-	std::string getType() const;
-	void makeSound() const;
-	~WrongAnimal();
+class Ice : public AMateria
+{
+	public:
+		Ice();
+		Ice(const Ice &copy);
+		Ice &operator=(const Ice &copy);
+		AMateria* clone() const;
+		void use(ICharacter& target);
+		~Ice();
 };
 #endif

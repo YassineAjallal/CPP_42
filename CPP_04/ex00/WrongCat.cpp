@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 18:23:27 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/20 18:25:40 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/26 09:26:07 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,4 @@ void WrongCat::makeSound() const
 std::string WrongCat::getType() const
 {
 	return (_type);
-}
-void WrongCat::setType(std::string type)
-{
-	_type = type;
 }

@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 18:20:59 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/20 18:23:17 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/26 09:25:52 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ public:
 	WrongAnimal();
 	WrongAnimal(WrongAnimal& copy);
 	WrongAnimal& operator=(const WrongAnimal& copy);
-	void setType(std::string type);
 	std::string getType() const;
 	void makeSound() const;
 	~WrongAnimal();

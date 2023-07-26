@@ -6,7 +6,7 @@
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 17:17:38 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/19 11:51:30 by yajallal         ###   ########.fr       */
+/*   Updated: 2023/07/23 16:40:24 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap()
 	_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+ScavTrap::ScavTrap(std::string name)
 {
 	std::cout << "ScavTrap Constructor called" << std::endl;
 	_name = name;
@@ -50,6 +50,17 @@ ScavTrap& ScavTrap::operator=(ScavTrap& copy)
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap is now in Gate keeper mode;" << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+	if (_energy_points > 0)
+	{	
+		std::cout << "ScavTrap " << _name << " attaks " << target << ", causing " << _attack_damage << " points of damage;"<< std::endl;
+		_energy_points--;
+	}
+	else
+		std::cout << "ScavTrap " << _name << " : No energy point" << std::endl;
 }
 
 ScavTrap::~ScavTrap()

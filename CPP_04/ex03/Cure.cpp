@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yajallal <yajallal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 10:09:48 by yajallal          #+#    #+#             */
-/*   Updated: 2023/07/26 09:56:56 by yajallal         ###   ########.fr       */
+/*   Created: 2023/07/24 18:05:58 by yajallal          #+#    #+#             */
+/*   Updated: 2023/07/25 18:31:40 by yajallal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Cure.hpp"
 
-Brain::Brain()
+Cure::Cure()
 {
-	std::cout << "Brain : Default constructor called" << std::endl;
-	for (int i = 0; i < 100; i++)
-		ideas[i] = "idea";
+	_type = "cure";
 }
 
-Brain::Brain(Brain& copy)
+Cure::Cure(const Cure &copy)
 {
-	std::cout << "Brain : Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Brain& Brain::operator=(const Brain& copy)
+Cure &Cure::operator=(const Cure &copy)
 {
 	if (this != &copy)
-		for (int i = 0; i < 100; i++)
-			ideas[i] = copy.ideas[i];
+		this->_type = copy.getType();
 	return (*this);
 }
 
-
-Brain::~Brain()
+void  Cure::use(ICharacter& target)
 {
-	std::cout << "Brain : Default Destructor called" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
+
+AMateria* Cure::clone() const
+{
+	AMateria *clone_cure = new Cure();
+	return (clone_cure);
+}
+
+Cure::~Cure(){}
